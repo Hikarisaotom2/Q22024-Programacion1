@@ -18,15 +18,18 @@ public class Clase_24042024 {
     public static void main(String[] args) {
        int opcion = 0;
        Scanner entrada = new Scanner(System.in);
+      
    
-       while(true){
+       while(opcion<=10){
            System.out.println("hola mundo infinito");
-           if(opcion==1){
-               break;
-           }
            System.out.println("hola");
+            if(opcion==1){
+              continue;
+           }
+            opcion++;
        }
      
+    
 //        
 //        /*
 //        Primero evalua.
