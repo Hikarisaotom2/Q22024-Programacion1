@@ -57,6 +57,8 @@ public class Clase_06052024 {
                      System.out.print(" * ");
                 }else if(j ==tamano || j == 1){
                      System.out.print(" * ");
+                }else{
+                    System.out.print("   ");
                 }
                
             }
@@ -76,11 +78,6 @@ public class Clase_06052024 {
             }
             System.out.println("");
         }//fin del for 
-        
-        
-       
-        
-        
 
     }
 
