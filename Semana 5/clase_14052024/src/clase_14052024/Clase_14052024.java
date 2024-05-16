@@ -36,26 +36,7 @@ public class Clase_14052024 {
             String valor = listaAsistencia[i];
             System.out.println(i+") "+ valor);
         }
-       
-        /*
-        CRUD 
-        C -> create
-        R -> read 
-        U -> update 
-        D -> delete
-        */
-        
-        /*
-         1) La universidad ..... desea imp,ementar un sistema de matricula para sus clases. 
-        la clase de programacion, tendra un espacio de x estudiantes, 
-        el valor de x sera porporiconado por el jefe academico al inicoo del periodo (cuando el programa inicia).
-        2) el programa debe permitirle a los estudiantes, inscribirse en la clase.  (update)
-        3) los estudiantes pueden retirar la clase (delete). 
-        4) el jefe academico puede visualizar los estudiantes inscritos en la clase cada vez que lo desee ( read)
-        */
-                
-        
-        
+ 
     }
     
 }
