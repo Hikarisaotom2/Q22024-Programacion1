@@ -114,6 +114,14 @@ public class Clase_15052024 {
         1) autocontrol -> Complicado
         2) la persona selccione la posicon en la que desea matricular. FACIL/ TRABAJO RECOMENDADO
         */
+        /*
+       boolean seencontro = verficarrepetido()
+       if(seenontro)
+            no matricluar 
+       else 
+            matricular 
+       */  
+        
        if(contador>=seccion.length || contador<0){
            //0.... (seccion.length-1)
            System.out.println("Ya no hay mas espacio en la seccion, no se puede matricular");
