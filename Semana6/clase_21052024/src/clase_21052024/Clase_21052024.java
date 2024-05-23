@@ -24,6 +24,7 @@ public class Clase_21052024 {
         int columnas = 2;
         
         int [][] matriz = new int [filas][columnas];
+       
         /*
           0 1
         0 9 20
@@ -41,27 +42,15 @@ public class Clase_21052024 {
         matriz[0][1] = 2;
         
         int tamanoFilas=  matriz.length;
+        //0... tamanoFilas-1
         int tamanoColumnas = matriz[0].length;
-        
+        // 0....tamanoColumnas-1
         for (int i = 0; i < tamanoFilas; i++) {//filas
             for (int j = 0; j < tamanoColumnas; j++) {//columnas
                 System.out.print(" ["+matriz[i][j]+"] ");
             }
             System.out.println("");
-        }
-        
-        
-        /*
-                 Maze runner 
-            cree un laberinto de tamano z * y
-        
-        genere, 5 obstaculos aleatorios dentro del tablero 
-        posicionar al jugador en la pos de salida, 0,0, rpresente al jugado con un *
-        permita al usuario moverse libremente por el tablero 
-        si el jugador se quiere mover a una pos que tiene un obtaculo, debemos mostrarle un mensaje diciendole que el camino esta obstruido 
-        el juego finaliza si el jugador sale del laberinto o si ub obstaculo esta en la salida. 
-        */
-        
+        }      
         
     }
     
