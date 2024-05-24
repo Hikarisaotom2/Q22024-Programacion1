@@ -16,6 +16,8 @@ public class Clase_22052024 {
     /**
      * @param args the command line arguments
      */
+    static int fila = 0;
+    static int columna=0;
     public static void main(String[] args) {
         /*
                  Maze runner 
@@ -37,16 +39,130 @@ public class Clase_22052024 {
         tablero = llenarTablero(tablero);
         tablero = agregarPersonaje(tablero);
         tablero = generarobstaculos(tablero);
-        visualizarTablero(tablero);
-//        boolean gano = false;
-//        while (!gano) {
-//           visualizarTablero(tablero); 
-//            
-//        }
+        boolean gano = false;
+        while (!gano) {
+           visualizarTablero(tablero); 
+           int pos = leerPos();
+           tablero=moverse(tablero,pos);
+           boolean finalizo = ganar(tablero);
+           if(finalizo){
+               gano = true;
+           }
+        }
 
     }
+    public static String[][] moverse(String[][] tablero, int pos){
+            int tamanoFilas = tablero.length;
+            int tamanoColumnas = tablero[0].length;
+            // 0... tamano-1
+             int filaTemp = fila;
+             int columnaTemporal=columna;
+            switch (pos) {
+            case 1->{
+                //arriba.
+                if(filaTemp>0){
+                    filaTemp--;
+                }else{
+                    System.out.println("No podemos movernos hacia arriba!");
+                }
+            }
+            case 2->{
+                //abajo
+                  if(filaTemp<(tamanoFilas-1)){
+                    filaTemp++;
+                }else{
+                    System.out.println("No podemos movernos hacia abajo!");
+                }
+            }
+            case 3->{
+                //izquierda
+                if(columnaTemporal>0){
+                    columnaTemporal--;
+                }else{
+                    System.out.println("No podemos movernos hacia la izquierda!");
+                }
+            } 
+            case 4->{
+                //derecha
+                if(columnaTemporal<(tamanoColumnas-1)){
+                    columnaTemporal++;
+                }else{
+                    System.out.println("No podemos movernos hacia la derecha!");
+                }
+            }
+            default ->{
+                fila=fila;
+                columna=columna;
+            }
+        }
+            if(tablero[filaTemp][columnaTemporal].equalsIgnoreCase("x")){
+                System.out.println("Hay un obstaculo en el camino!");
+            }else{
+                tablero[filaTemp][columnaTemporal] ="*";
+                tablero[fila][columna] =" ";
+                 fila= filaTemp;
+                 columna=columnaTemporal;
+              
+            }
+            return tablero;
+        
+    }
+    public static boolean ganar(String[][] tablero){
+        int tamanoFilas = tablero.length;
+        int tamanocolumnas= tablero[0].length;
+        int ultFila = tamanoFilas-1;
+        int ultCol =tamanocolumnas-1;
+        
+        if(tablero[tamanoFilas-1][ultCol].equalsIgnoreCase("*")){
+            System.out.println("Esta cerca de ganar!");
+            /*
+            si cae en una trampa, y cambia de tablero. 
+            generar el nuevo tablero.
+            hacer que el metodo, regrese el nuevo tablero
+            */
+        }
+        if(tablero[ultFila][ultCol].equalsIgnoreCase("x")){
+            System.out.println("Hay un obstaculo en la salida!");
+            return true;
+            
+        }
+        
+        if (tablero[ultFila][ultCol].equalsIgnoreCase("*")) {
+            System.out.println("FELICIDADES! ESCAPO DEL LABERINTO");
+            return true;
+        }
+        return false;
+    }
+    public static int leerPos (){
+            /*
+    1) pedimos las coordenadas : recomendacion a los estudiantes, 
+    
+        2) implementar un sistema de navegacion 
+        arriba 
+        abajoo
+        izquierda
+        derecha
+    
+    */
+        System.out.println("1. arriba");
+        System.out.println("2. abajo");
+        System.out.println("3. izq");
+        System.out.println("4. derecha");
+        Scanner entrada = new Scanner(System.in);
+        int pos = entrada.nextInt();
+        switch (pos) {
+            case 1 -> { System.out.println("moviendose hacia arriba... ");}
+            case 2 -> { System.out.println("moviendose hacia abajo... ");}
+            case 3 -> { System.out.println("moviendose hacia la izquierda... ");}
+            case 4 -> { System.out.println("moviendose hacia la derecha... ");}
+            default ->{ System.out.println("pos Invalida... ");}
+           
+        }
+        return pos;
+        
+    }
     public static String[][] agregarPersonaje(String[][] tablero){
-        tablero[0][0]="*";
+        tablero[fila][columna]="*";
         return tablero;
     }
     public static String[][] generarobstaculos(String[][] tablero) {
