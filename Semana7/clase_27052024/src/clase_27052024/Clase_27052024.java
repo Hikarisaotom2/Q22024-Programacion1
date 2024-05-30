@@ -18,10 +18,10 @@ public class Clase_27052024 {
         Scanner entrada = new Scanner(System.in);
         Persona [] usuarios = new Persona[5];
         Persona usuario = new Persona("Patricia",30,false,"cafe",1.70); 
-        System.out.println("El nombre de la persona es: "+ usuario.nombre);
+        System.out.println("El nombre de la persona es: "+ usuario.getNombre());
         
         Persona usuario2 = new Persona("Claudia",30,false,"cafe",1.87); 
-        System.out.println("El nombre de la persona es: "+ usuario2.nombre);
+        System.out.println("El nombre de la persona es: "+ usuario2.getNombre());
         
         System.out.println(usuario);
         System.out.println(usuario2);
@@ -30,22 +30,16 @@ public class Clase_27052024 {
         usuario2.calcularImc();
         
         
-        usuario.edad = 31;
-        usuario.tipoImpresion = 1;
-        System.out.println("tostring "+usuario);
-         usuario.tipoImpresion = 2;
-        System.out.println("tostring "+usuario);
+        /* actualizar iformacion -> set*/
+        usuario.setNombre("Bertha");
         
-        /* TipoDato nombre = ini;
+        /*Visualizar la informacion ->get*/
+        String nombre = usuario.getNombre();
         
-        tipoDedato nombre;*/
+        System.out.println(usuario);
         
-       /*
-       personas regstradas
-        arreglo personas
-        */
-                
-                
+        
+       
         
     }
 
