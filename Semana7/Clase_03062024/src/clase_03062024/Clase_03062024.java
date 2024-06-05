@@ -20,6 +20,7 @@ public class Clase_03062024 {
         // pos validas.... 0.... tamano -1
       
         ArrayList inventario = new ArrayList<String>();
+         
         /*a diferencia del arreglo (array) comun, 
         el arraylist no necesita un tamano inicial
         su tamano inicial va a ser 0.
@@ -29,7 +30,7 @@ public class Clase_03062024 {
         System.out.println("El tamano actual del arraylist es "+tamano);
         
         //agregar elementos 
-        
+       
         
         // 1) si utiliamos .add, los elementos se agregaran al final de la lista
         inventario.add("Juan ");
@@ -81,7 +82,7 @@ public class Clase_03062024 {
         }else{
             System.out.println("pedro no esta");
         }
-        
+        // inventario.size()==0
         if (inventario.isEmpty()) {
             System.out.println("esta vacio");
         }else{
@@ -90,7 +91,7 @@ public class Clase_03062024 {
         
         //borra todos los elemtnos del arraylist
         inventario.clear();
-        
+       
        
         
     }
